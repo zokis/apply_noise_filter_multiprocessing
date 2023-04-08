@@ -48,8 +48,8 @@ def main():
         shared = manager.dict(progress=0.0, processed=0)
         with Pool() as p:
             p.map(add_noise, [(image_path, noise_factor, lock, shared, total_images) for image_path in image_list])
-        elapsed_time = time.time() - start_time
-    print(f"Processing complete! {total_images} images processed in {elapsed_time:.2f} seconds.")
+
+    print(f"Processing complete! {total_images} images processed in {(time.time() - start_time):.2f} seconds.")
 
 
 if __name__ == "__main__":
