@@ -45,14 +45,13 @@ def main():
     start_time = time.time()
     print(f"Starting image processing of {total_images} images...")
 
-    shared = {"processed": 0.0, "progress": 0}
+    shared = {"processed": 0, "progress": 0.0}
 
     for image_path in image_list:
         add_noise(image_path, noise_factor, shared, total_images)
 
-    elapsed_time = time.time() - start_time
     print(
-        f"Processing complete! {total_images} images processed in {elapsed_time:.2f} seconds."
+        f"Processing complete! {total_images} images processed in {(elapsed_time = time.time() - start_time):.2f} seconds."
     )
 
 
